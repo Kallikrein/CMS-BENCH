@@ -52,3 +52,11 @@ It may be advisable to consider only production config and override environment 
 It's a good practice to get environment variables from ... environment variables.
 The JSON pattern here is worse than runtime async hook: a lot of best practice include key vaults, consul, etc. to forward relevant environment variables.
 I will explore if a .js replacement of the json is functional.
+
+### build
+
+Build only outputs the admin UI page, the api server is not built.
+
+### startup (lambda consideration)
+
+empty and fresh server output from CLI : 0.8 ~ 1 s
