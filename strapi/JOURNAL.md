@@ -60,3 +60,17 @@ Build only outputs the admin UI page, the api server is not built.
 ### startup (lambda consideration)
 
 empty and fresh server output from CLI : 0.8 ~ 1 s
+
+### roles safety breach
+
+The default admin has the ability to create or edit "content types" that trigger source code modification.
+Commiting and tracking these modifications, integrating them in a continuous delivery pipeline, can prove to be extremely challenging and opens a back-door to breaking updates in any environment.
+It seems advisable to allow admin features only in development environment and create custom roles restricted to content (resources) edition in a production environment.
+
+### preview feature
+
+Giving a preview of a page or widget via the backoffice is incomptible with the headless approach: The backoffice would need "knowledge" of front end target templates beforehand, conflicting with the core concept behind headless CMS that the front end display is decorelated from the backoffice.
+
+### SSO support
+
+Classical third party auth are supported natively, we need to audit feasability and cost of implementing AXA pass SSO for signin.
