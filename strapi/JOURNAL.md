@@ -74,3 +74,21 @@ Giving a preview of a page or widget via the backoffice is incomptible with the 
 ### SSO support
 
 Classical third party auth are supported natively, we need to audit feasability and cost of implementing AXA pass SSO for signin.
+
+### major issue
+
+Cloning a strapi application then running npm install does not regenerate the required, by default unversionned, .cache folder at the root of the application.
+Without this folder the application server can't serve the backoffice (at least, didn't test for more).
+Running the development script regenerates the application.
+On a broader note, the application is poorly documented and rely on cli hidden functionality to perform. The .cache folder architecture relevence is unclear at best, and most probably a bad implementation/architecture.
+
+There is no open issue on the subject, wich makes me wonder how many real users are effectively depending on the package.
+
+### overall
+
+The package is complex yet poorly documented. Submodule dependencies are not using scoped package wich is surprising at best.
+Required implicit pseudo-build steps happen as a side effect of development watch mode serve. Running a development script once, shutting it down, then launching the production serve script is a very poor interface.
+A lot of "packaged" dependencies, orms like knex, bookshelf, are abstracted from the developper control.
+The "ready-to-go" fully packaged approached is a good one for very little team but can be a bottle neck for larger scale development and delivery.
+
+Maybe the whole CMS concept may be have to be challenged.
