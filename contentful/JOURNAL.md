@@ -15,3 +15,15 @@ npm run dev
 ### data
 
 https://www.contentful.com/developers/docs/concepts/data-model/
+
+Primitives:
+
+Rich text
+Text
+Number
+Date and time
+Location
+Media
+Boolean
+JSON object
+Reference
