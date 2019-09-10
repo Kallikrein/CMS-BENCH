@@ -32,3 +32,9 @@ docker run --name test-mysql --rm -it --env-file db.env -v $PWD/db:/var/lib/mysq
 docker run --name test-php --rm -it --env-file wordpress.env -p 80:80 -v $PWD/server:/var/www/html php:7.2-apache
 
 `docker-compose up`
+
+### server
+
+open localhost:8080
+
+Change language
