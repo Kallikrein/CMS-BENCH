@@ -38,3 +38,15 @@ docker run --name test-php --rm -it --env-file wordpress.env -p 80:80 -v $PWD/se
 open localhost:8080
 
 Change language
+
+### connection to DB
+
+setup creation of config does not manage to connect.
+I created a config.php from the sample, the site now throws a fatal error where DB user and password are logged with no precaution
+
+`Fatal error: Uncaught Error: Call to undefined function mysql_connect() in /var/www/html/wp-includes/wp-db.php:1643 Stack trace: #0 /var/www/html/wp-includes/wp-db.php(639): wpdb->db_connect() #1 /var/www/html/wp-includes/load.php(427): wpdb->__construct('wordpress', 'abcdef', 'wpdb', 'mysql') #2 /var/www/html/wp-settings.php(120): require_wp_db() #3 /var/www/html/wp-config.php(90): require_once('/var/www/html/w...') #4 /var/www/html/wp-load.php(37): require_once('/var/www/html/w...') #5 /var/www/html/wp-blog-header.php(13): require_once('/var/www/html/w...') #6 /var/www/html/index.php(17): require('/var/www/html/w...') #7 {main} thrown in /var/www/html/wp-includes/wp-db.php on line 1643`
+
+### dependencies
+
+All wordpress dependencies have to be installed globally on the system.
+There is no equivalent to npm dependencies
