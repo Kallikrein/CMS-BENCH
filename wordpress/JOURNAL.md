@@ -50,3 +50,11 @@ I created a config.php from the sample, the site now throws a fatal error where 
 
 All wordpress dependencies have to be installed globally on the system.
 There is no equivalent to npm dependencies
+Once the docker image is correctly set up it's
+
+### custom types
+
+[documentation](https://wordpress.org/support/article/post-types/#custom-post-types)  
+Via code
+A lot of code (query models etc) has to be done by hand
+Requires a lot of php expertise to design api update right
