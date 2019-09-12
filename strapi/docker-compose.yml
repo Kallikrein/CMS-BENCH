@@ -1,0 +1,13 @@
+version: "3.7"
+services:
+  web:
+    image: node
+    volumes:
+      - ./server:/src
+    env_file: server.env
+  post:
+    image: mysql
+    command: --default-authentication-plugin=mysql_native_password
+    volumes:
+      - ./db:/var/lib/mysql
+    env_file: db.env
